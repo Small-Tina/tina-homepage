@@ -1,5 +1,5 @@
 * {
-  font-family: "MiSans Demibold", serif;
+  font-family: 'MiSans Demibold', serif;
 }
 html,
 body {
@@ -10,15 +10,14 @@ body {
 #root {
   background: inherit;
 }
-#root::before{
-  content: "";
+#root::before {
+  content: '';
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  background: url("https://img.stina.top/small-tina-img/2023/12/68f69165bdb3aacdab33459da37ec87d.png")
-  center / cover no-repeat;
+  background: url('./assets/backgroudImg.png') center / cover no-repeat;
   filter: blur(15px);
   z-index: -1;
 }
@@ -59,4 +58,3 @@ body {
   left: calc(50% - 200px);
   font-size: xx-large;
 }
-
