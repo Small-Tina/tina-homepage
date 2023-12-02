@@ -1,15 +1,25 @@
 import './App.css';
 
+import headPortrait from './assets/headPortrait.jpg';
+import {CSSTransition} from 'react-transition-group'
+
 function App() {
+
   return (
     <>
-      <div id="root">
-        <div>别急，在写了</div>
-        <div>
-          <iframe src="//player.bilibili.com/player.html?aid=80433022&bvid=BV1GJ411x7h7&cid=137649199&p=1" frameBorder={'0'} title="rickroll" className="mx-auto"></iframe>
+      <CSSTransition in={true} appear={true} timeout={1500} classNames="headPortraitTransition">
+        <div className={"headPortraitContainer"}>
+          <div className={"headPortrait"}>
+            <img src={headPortrait} width={'200px'} alt={''} className="rounded-full headPortraitImg" />
+          </div>
+          <div className={"selfIntroduction"}>
+            <div className={"selfIntroductionText"}>
+              <div className="Tina">Tina</div>
+              <div className="">A Front-end developer</div>
+            </div>
+          </div>
         </div>
-        <div>还是先看会rickroll吧</div>
-      </div>
+      </CSSTransition>
     </>
   );
 }
