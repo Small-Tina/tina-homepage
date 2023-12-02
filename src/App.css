@@ -17,9 +17,9 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  background: url("src/assets/backgroudImg.png")
+  background: url("https://img.stina.top/small-tina-img/2023/12/68f69165bdb3aacdab33459da37ec87d.png")
   center / cover no-repeat;
-  filter: blur(10px);
+  filter: blur(15px);
   z-index: -1;
 }
 .headPortraitTransition-appear {
