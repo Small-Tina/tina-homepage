@@ -1,5 +1,10 @@
+@font-face {
+  font-family: 'MiSans';
+  src: url('./assets/MiSans-Regular.woff');
+}
 * {
-  font-family: 'MiSans Demibold', serif;
+  font-family: 'MiSans', serif;
+  font-weight: 500;
 }
 html,
 body {
@@ -18,43 +23,34 @@ body {
   top: 0;
   left: 0;
   background: url('./assets/backgroudImg.jpg') center / cover no-repeat;
-  filter: blur(15px);
+  filter: blur(5px);
   z-index: -1;
 }
-.headPortraitTransition-appear {
-  opacity: 0;
-}
-.headPortraitTransition-appear-active {
-  opacity: 1;
-  transition: opacity 1500ms;
-}
 .headPortraitContainer {
-  width: 800px;
-  height: 400px;
+  width: 680px;
+  height: 200px;
   position: absolute;
-  top: calc(50% - 240px);
-  left: calc(50% - 400px);
+  top: calc(50% - 120px);
+  left: calc(50% - 340px);
   display: flex;
 }
-.headPortrait {
+.avatar {
   position: relative;
-  flex: 3;
+  display: inline-flex;
 }
 .headPortraitImg {
-  position: absolute;
-  top: calc(50% - 100px);
-  left: calc(50% - 50px);
+  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px;
 }
 .selfIntroduction {
   position: relative;
   flex: 4;
-  color: #ffffff;
+  color: #465d4c;
 }
 .selfIntroductionText {
   width: 300px;
   height: 200px;
   position: absolute;
-  top: calc(50% - 40px);
+  top: calc(50% - 65px);
   left: calc(50% - 200px);
   font-size: xx-large;
 }

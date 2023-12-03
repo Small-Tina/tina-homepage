@@ -1,30 +1,35 @@
 import './App.css';
-
+import { motion } from 'framer-motion';
 import headPortrait from './assets/headPortrait.jpg';
-import {CSSTransition} from 'react-transition-group'
+import { useState } from 'react';
 
 function App() {
-const timeout:object = {
-  appear: 1500,
-  enter: 1300,
-  exit: 1500,
-  };
+  const [list, setList] = useState(false);
+  function listClick() {
+    if (!list) {
+      setList(true);
+    } else {
+      setList(false);
+    }
+  }
   return (
     <>
       <div className="background">
-        <CSSTransition in={true} appear={true} timeout={timeout} classNames="headPortraitTransition">
-          <div className={"headPortraitContainer"}>
-            <div className={"headPortrait"}>
-              <img src={headPortrait} width={'200px'} alt={''} className="rounded-full headPortraitImg" />
+        <div>
+          <div></div>
+          <button onClick={listClick}></button>
+        </div>
+        <div className={'headPortraitContainer'}>
+          <motion.div className="avatar" animate={{ scale: 1, rotate: 360 }}>
+            <motion.img src={headPortrait} alt={''} className="rounded-full w-48 ring ring-emerald-900" animate={{}} whileHover={{ scale: 0.95 }} whileTap={{ scale: 0.9 }} />
+          </motion.div>
+          <motion.div className={'selfIntroduction'}>
+            <div className={'selfIntroductionText'}>
+              <div className="text-7xl">Tina</div>
+              <div className="text-2xl pt-1">ハッハッハッ！雪風様は無敵なのだ！</div>
             </div>
-            <div className={"selfIntroduction"}>
-              <div className={"selfIntroductionText"}>
-                <div className="text-5xl">Tina</div>
-                <div className="text-xl">A Front-end Developer</div>
-              </div>
-            </div>
-          </div>
-        </CSSTransition>
+          </motion.div>
+        </div>
       </div>
     </>
   );
