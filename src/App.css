@@ -23,7 +23,7 @@ body {
   top: 0;
   left: 0;
   background: url('./assets/backgroudImg.jpg') center / cover no-repeat;
-  filter: blur(5px);
+  filter: blur(10px);
   z-index: -1;
 }
 .headPortraitContainer {
@@ -33,6 +33,21 @@ body {
   top: calc(50% - 120px);
   left: calc(50% - 340px);
   display: flex;
+}
+.menuBarNone {
+  height: 100px;
+  position: relative;
+  top: -60px;
+}
+.menuBarDisplay {
+  height: 100px;
+  position: relative;
+  top: 10px;
+}
+.menuButton {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
 }
 .avatar {
   position: relative;
