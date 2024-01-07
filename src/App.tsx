@@ -1,51 +1,56 @@
-import './App.css';
-import headPortrait from './assets/headPortrait.png';
-import menu from './assets/menu.svg';
+//引入模块组件
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { Modal } from 'antd';
+//引入自定义内容
+import './App.css';
+import headPortrait from './assets/headPortrait.png';
+import menu from './assets/menu.svg';
 
 const App: React.FC = () => {
-  const [list, setList] = useState<boolean>(false);
+  const [list, setList] = useState<boolean>(true);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
-  const listClick = () => {
-    if (!list) {
-      setList(true);
-      const menu: Element | null = document.querySelector('.menuBarNone');
-      menu!.className = 'menuBarDisplay';
-    } else {
-      setList(false);
-      const menu: Element | null = document.querySelector('.menuBarDisplay');
-      menu!.className = 'menuBarNone';
-    }
+  const menuStates = {
+    begin: { y: 10 },
+    end: { y: 70 },
   };
-  const handleOk = () => {
+  const handleOk = (): void => {
     setIsModalOpen(false);
   };
-
-  const handleCancel = () => {
+  const handleCancel = (): void => {
     setIsModalOpen(false);
   };
   return (
     <>
-      <Modal title="提醒" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-        <p>网站将于农历新年正式完工</p>
-        <p>目前正在全力开发中</p>
+      <Modal title="公告" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+        <p>网页项目将于农历新年完工</p>
+        <p>目前正在加紧开发中</p>
+        <p>敬请期待</p>
       </Modal>
-      <div className="background">
-        <div>
-          <motion.div className={'menuBarNone'}>
-            <button onClick={listClick}>
-              <motion.img className={'menuButton'} width={30} src={menu} alt="" whileHover={{ scale: 0.95 }} />
-            </button>
+      <div id={'main-box'}>
+        <div id={'drop-down-box'}>
+          <motion.div className={'menuBar relative'} variants={menuStates} animate={list ? 'begin' : 'end'}>
+            <div className={'m-auto h-60px w-49/50 rounded-lg flex flex-row'}>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div
+              className={'absolute bottom-5px left-3'}
+              onClick={() => {
+                setList(!list);
+              }}
+            >
+              <motion.img width={30} src={menu} alt="" whileHover={{ scale: 0.95 }} />
+            </div>
           </motion.div>
         </div>
-        <div className={'headPortraitContainer'}>
-          <motion.div className="avatar" animate={{ scale: 1, rotate: 360 }}>
-            <motion.img src={headPortrait} alt={''} className="rounded-full w-48 ring ring-emerald-900" animate={{}} whileHover={{ scale: 0.95 }} whileTap={{ scale: 0.9 }} />
+        <div className={'headPortraitContainer h-200px w-680px absolute flex'}>
+          <motion.div className={' inline-flex relative'} animate={{ scale: 1, rotate: 360 }}>
+            <motion.img src={headPortrait} alt={''} className="rounded-full w-48 ring ring-emerald-900 shadow-headPortrait" animate={{}} whileHover={{ scale: 0.95 }} whileTap={{ scale: 0.9 }} />
           </motion.div>
-          <motion.div className={'selfIntroduction'}>
-            <div className={'selfIntroductionText'}>
+          <motion.div className={'selfIntroduction relative'}>
+            <div className={'selfIntroductionText w-300px h-200px absolute text-2xl'}>
               <div className="text-7xl">Tina</div>
               <div className="text-2xl pt-1">ハッハッハッ！雪風様は無敵なのだ！</div>
             </div>

@@ -4,7 +4,7 @@
 }
 * {
   font-family: 'MiSans', serif;
-  font-weight: 500;
+  font-weight: 600;
 }
 html,
 body {
@@ -23,49 +23,22 @@ body {
   top: 0;
   left: 0;
   background: url('./assets/backgroudImg.jpg') center / cover no-repeat;
-  filter: blur(10px);
+  filter: blur(20px);
   z-index: -1;
 }
 .headPortraitContainer {
-  width: 680px;
-  height: 200px;
-  position: absolute;
   top: calc(50% - 120px);
   left: calc(50% - 340px);
-  display: flex;
 }
-.menuBarNone {
+.menuBar {
   height: 100px;
-  position: relative;
   top: -60px;
 }
-.menuBarDisplay {
-  height: 100px;
-  position: relative;
-  top: 10px;
-}
-.menuButton {
-  position: absolute;
-  bottom: 5px;
-  left: 5px;
-}
-.avatar {
-  position: relative;
-  display: inline-flex;
-}
-.headPortraitImg {
-  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px;
-}
 .selfIntroduction {
-  position: relative;
   flex: 4;
   color: #465d4c;
 }
 .selfIntroductionText {
-  width: 300px;
-  height: 200px;
-  position: absolute;
   top: calc(50% - 65px);
   left: calc(50% - 200px);
-  font-size: xx-large;
 }
